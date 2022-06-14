@@ -50,31 +50,7 @@ stages:
 #     appName: $(azureAppServiceName) #App Service's unique name
 #     package: $(Build.ArtifactStagingDirectory)/**/*.zip
 
-# - stage: 'DeployDev'
-#   displayName: 'Deploy to Dev'
-#   variables: 
-#     appName: 'bermtecdev'
-#   jobs:
-#   - deployment: 'Dev'
-#     pool:
-#       name: test
-#     environment: 'Dev'
-#     strategy: 
-#        runOnce:     
-#         deploy:
-#           steps:
-#            - task: AzureRmWebAppDeployment@4
-#              displayName: 'Deploy .NET Code to Azure App Service '
-#              inputs:
-#               ConnectionType: 'AzureRM'
-#               azureSubscription: 'Azure'
-#               appType: 'webApp'
-#               WebAppName: $(appName)
-#               packageForLinux: '$(Agent.BuildDirectory)/$(artifactName)/$(buildConfiguration)/*.zip'
 
-          #  - task: Bash@3
-          #    displayName: '2nd Bash'
-          #    inputs:
-          #       targetType: 'inline'
-          #       script: 'echo $(Agent.BuildDirectory)'
+
+
 
