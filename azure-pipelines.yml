@@ -42,12 +42,12 @@ stages:
           command: 'install'
           workingDir: 'ClientApp'
       
-      - task: Npm@1
-        displayName: 'Testing'
-        inputs:
-           command: 'custom'
-           workingDir: 'ClientApp'
-           customCommand: 'run test'
+      # - task: Npm@1
+      #   displayName: 'Testing'
+      #   inputs:
+      #      command: 'custom'
+      #      workingDir: 'ClientApp'
+      #      customCommand: 'run test'
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
