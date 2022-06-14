@@ -5,6 +5,8 @@
 
 trigger:
 - develop
+- feature/*
+- master
 
 pool:
   name: local build agent
@@ -15,3 +17,12 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+
+- task: DotNetCoreCLI@2
+  displayName: Publish Project
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration)'
+    zipAfterPublish: true
